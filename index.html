@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive CV using HTML & CSS </title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: lightblue;
+        }
+        @import url('https://fonts.googleapis.com/css?family=poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' , sans-serif;
+}
+body{
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    position: relative;
+    width: 100%;
+    /* max-width: 1000px; */
+    min-height: 1000px;
+    background: #fff;
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+}
+.container .left_side{
+    position: relative;
+    background: #003147;
+    padding: 30px;
+}
+.profileText{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.profileText .imgBx{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}   
+.profileText .imgBx img{
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    object-fit: cover;
+}
+.profileText h2{
+    color: #fff;
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.4em;
+    letter-spacing: 1px;
+}
+.profileText h2 span{
+     font-size: 0.8em;
+     font-weight: 300;
+     letter-spacing: 0px;
+     line-height: 10px;
+}
+.contactInfo{
+    padding-top: 40px;
+}
+.title{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.containerInfo ul{
+    position: relative;  
+}
+.contactInfo ul li{
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.contactInfo ul li .icon{
+    display: inline-block;
+    width: 30px;
+    font-size: 18px;
+    color: #03a9f4;
+}
+.contactInfo ul li span{
+    color: #fff;
+    font-weight: 300;
+}
+.contactInfo.education li{
+     margin-bottom: 15px;
+}
+.contactInfo.education h5{
+    color: #03a9f4;
+    font-weight: 500;
+    line-height: 25px;
+}
+.contactInfo.education h4:nth-child(2){
+    color: #fff;
+    font-weight: 500;
+}
+.contactInfo.education h4{
+    color: #fff;
+    font-weight: 300;
+    margin: auto auto 5px;
+}
+.contactInfo.language  .percent{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #081921;
+    display: block;
+    margin-top: 5px;
+}
+.contactInfo.language .percent div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #03a9f4;
+}
+#far{
+    font-size: 15px;
+}
+.intrest ul{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    /* margin: 20px 20px 20px; */
+}    
+.intrest ul li{
+    list-style: none;
+    color: #fff;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.intrest ul li .fa{
+    color: #03a9f4;
+    font-size: 18px;
+    width: 20px;
+}
+.intrest ul li .icon{
+    display: inline-block;
+    width: 20px;
+    font-size: 18px;
+    color: #03a9f4;
+}
+.container .right_side{ 
+    position: relative;
+    background: #fff;
+    padding: 40px;
+}
+.about{
+    margin-bottom: 50px;
+}
+.about:last-child{
+    margin-bottom: 0;
+}
+.about ul li{
+    margin: 10px;
+}
+.title2{
+    column-rule-color: #003147;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+p{
+    color: #333;
+    line-height: 25px;
+}
+.about .box{
+    display: flex;
+    flex-direction: row;
+    margin: 20px 0;
+}
+.about .box .year_company{
+    min-width: 150px;
+} 
+.about .box .year_company{
+    text-transform: uppercase;
+    color: #848c90;
+    font-weight: 600;
+} 
+.about .box .text h4{
+    text-transform: uppercase;
+    color: #2a7da2;
+    font-size: 16px;
+    margin: auto auto 5px;
+}
+.skills .box{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.skills .box h4{
+    text-transform: uppercase;
+    color: #848c99;
+    font-weight: 500;
+}
+.skills .box .percent{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background: #f0f0f0;
+}
+.skills .box .percent div{
+    position: absolute;
+    top: 0;
+    left: 00;
+    height: 100%;
+    background: #03a9f4;
+}
+
+
+@media (max-width: 1300px){
+    .container{
+        margin: 10px;
+        grid-template-columns: repeat(1,1fr) ;
+    }
+}
+
+@media (max-width: 600px){
+    .about .box{
+        flex-direction: column;
+    }
+    .about .box .year_company{
+        margin-bottom: 5px;
+    }
+    .intrest ul{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .skills .box{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+    </style>
+    <div class="container">
+        <div class="left_side">
+            <div class="profileText">
+                <div class="imgBx">
+                    <img src="FAR2.jpg" alt="">
+                </div>
+                <h2>Furquan Rahim <br><span> MERN Stack Developer</h2>
+              </div>
+             
+              <div class="contactInfo">
+                  <h3 class="title">Contact Info</h3>
+                  <ul>
+                      <li>
+                          <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i>
+                          </span>
+                          <span class="text">+92 300 2701126</span>
+                      </li>
+                               <li>
+                          <span class="icon"><i class="fa fa-whatsapp" aria-hidden="true"></i>
+                          </span>
+                          <span class="text">+92 320 3037075</span>
+                      </li>
+                      <li>
+                        <span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i>                        </span>
+                        <span class="text" id="far">thefurquanrahim@gmail.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">linkedin.com/in/thefurquanrahim</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-superpowers" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">thefurqanrahim.github.io/PortfolioWebsite/</span>
+                    </li>
+                     <li>
+                        <span class="icon"><i class="fa fa-github" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">github.com/thefurqanrahim</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-behance" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">behance.net/thefurquanrahim</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">Karachi, Pakistan</span>
+                    </li>
+                  </ul>
+              </div>
+
+            
+              <div class="contactInfo education">
+                <h3 class="title">Education</h3>
+                <ul>
+                    <li>
+                        <h5>2021 - Present</h5>
+                        <h4>Advance Diploma in Software Engineering (ADSE)</h4>
+                        <h4>Aptech Learning Shahrah-e-Faisal Center</h4>
+                    </li>
+                  <li>
+                      <h5>2020 - 2021</h5>
+                      <h4>Certified Mobile Application Developer</h4>
+                      <h4>Hajiyani Sakeena IT Institute (HSII)</h4>
+                  </li>
+                                      <li>
+                      <h5>2020 - 2021</h5>
+                      <h4>Certified Web Developer</h4>
+                      <h4>Hajiyani Sakeena IT Institute (HSII)</h4>
+                  </li>
+                  <li>
+                    <h5>2020 - 2021</h5>
+                    <h4>Certified Graphic Designer</h4>
+                    <h4>Hajiyani Sakeena IT Institute (HSII)</h4>
+                </li>
+                <li>
+                    <h5>2020 - 2021</h5>
+                    <h4>Certified Video Animator</h4>
+                    <h4>Hajiyani Sakeena IT Institute (HSII)</h4>
+                </li>
+                  <li>
+                    <h5>2019 - 2021</h5>
+                    <h4>Intermediate</h4>
+                    <h4>Private</h4>
+                </li>
+                <li>
+                    <h5>2018</h5>
+                    <h4>Matriculation</h4>
+                    <h4>Waves Grammar School/Little Star Secondary School</h4>
+                </li>
+                </ul>
+            </div>
+
+            <div class="contactInfo language">
+                <h3 class="title">Languages</h3>
+                <ul>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent">
+                        <div style="width: 80%;"></div>
+                    </span>
+                    </li>
+                    <li>
+                        <span class="text">Urdu</span>
+                        <span class="percent">
+                        <div style="width: 90%;"></div>
+                    </span>
+                    </li>
+                </ul>
+            </div> 
+<!--             <div class="contactInfo intrest">
+                <h3 class="title">Interest</h3>
+                <ul>
+                    <li> <span class="icon"><i class="fa fa-gamepad" aria-hidden="true"></i></span>
+                        Gaming</li>
+                    <li><span class="icon"><i class="fa fa-microphone" aria-hidden="true"></i></span>
+                        Singing</li>
+                    <li><span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                        Reading</li>
+                    <li><span class="icon"><i class="fa fa-cutlery" aria-hidden="true"></i> </span>
+                        Cooking</li>
+                </ul>
+            </div> -->
+            
+            
+            <div class="contactInfo intrest">
+                <h3 class="title">Interest</h3>
+                <ul>
+                    <li> <span class="icon"><i class="fa fa-code" aria-hidden="true"></i></span>
+                        Development</li>
+                    <li><span class="icon"><i class="fa fa-windows" aria-hidden="true"></i></span>
+                        Artificial &nbsp; &nbsp; &nbsp; Intelligence</li>
+                    <li><span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
+                        Designig</li>
+                    <li><span class="icon"><i class="fa fa-gamepad" aria-hidden="true"></i> </span>
+                        Animation</li>
+                </ul>
+            </div>
+   
+        </div>
+        
+        
+        <div class="right_side">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <!-- <p>I am a capable person, who has extensive experince in the fields of understanding sophisticated client needs 
+                   and is able to weave together complex, technically-oriented solutions; presnting, planning and helping customers
+                   execute change.</p> -->
+                   <p>
+                    Skilled freelance Mobile App Developer. Dedicated to staying up-to-date on new techniques and procedures related to Web Development, 
+                    graphic design, desktop publishing, computer-aided design and video creation. Managed multiple projects simultaneously. Excellent 
+                    communicators can work as part of a team or as the sole Developer.
+                   </p>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            <div class="about">
+                <h2 class="title2">Experience</h2>
+                
+                
+                
+                
+                
+                
+                <div class="box">
+                <div class="year_company">
+                    <h5>May 2022 - present</h5>
+                    <h5 style="display: flex; justify-content: center; align-items: center; margin-top : 30px;">Twin World <br /> Technologies</h5>
+                </div>
+                <div class="text">
+                    <h4>React &nbsp Developer
+                    </h4>
+                    <ul>
+                        <li>
+                           Implement websites, mobile applications, and
+                            landing pages from concept through deployment.
+                        </li>
+                        <li>
+                            Standardize all output with a new, responsive,
+                             mobile-first approach and strategy.
+                        </li>
+                        <li>
+                           Develop standard and ad hoc reports in graph format as required.
+                        </li>
+                        <li>
+                           Collaborate with product team members to implement new feature development.
+                        </li>
+                    </ul>
+                </div>
+                
+                </div>
+                
+                
+                
+
+                
+                
+                 <div class="box">
+                <div class="year_company">
+                    <h5>Nov 2021 - Jan 2022</h5>
+                    <h5 style="display: flex; justify-content: center; align-items: center; margin-top : 30px;">Bizz World</h5>
+                </div>
+                <div class="text">
+                    <h4>React &nbsp Developer (Internship)
+                    </h4>
+                    <ul>
+                        <li>
+                           Implement websites, mobile applications, and
+                            landing pages from concept through deployment.
+                        </li>
+                        <li>
+                            Standardize all output with a new, responsive,
+                             mobile-first approach and strategy.
+                        </li>
+                        <li>
+                           Develop standard and ad hoc reports in graph format as required.
+                        </li>
+                        <li>
+                           Collaborate with product team members to implement new feature development.
+                        </li>
+                    </ul>
+                </div>
+                
+                </div>
+                
+                
+                                 
+            <div class="box">
+                <div class="year_company">
+                    <h5>Sep 2021 - present</h5>
+                    <h5 style="display: flex; justify-content: center; align-items: center; margin-top : 30px;">Upwork</h5>
+                </div>
+                <div class="text">
+                    <h4>FREELANCER (MOBILE APP DEVELOPER)
+                    </h4>
+                    <ul>
+                        <li>
+                            In-depth understanding of computer programming
+                            language and ability to code.
+                        </li>
+<!--                          <li>
+                            Knowledge of most types of graphic design software,
+including object oriented management and metadata
+management software.
+                        </li>  -->
+                        <li>
+                            Ability to think creatively and find unique solutions to
+                            problems.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            
+                <div class="box">
+                    <div class="year_company">
+                        <h5>Sep 2021 - present</h5>
+                        <h5 style="display: flex; justify-content: center; align-items: center; margin-top : 30px;">Fiverr</h5>
+                    </div>
+                    <div class="text">
+                        <h4>FREELANCER (GRAPHIC DESIGNER)
+                        </h4>
+                        <ul>
+                            <li>
+                                Designed layouts using esthetic design concepts.
+                            </li>
+                            <li>
+                                Assembled and marked final layout to ensure everything is ready for the printer
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+ 
+              
+
+                    <div class="box">
+                        <div class="year_company">
+                            <h5>Aug 2021 - 30 Oct 2021</h5>
+                            <h5 style="display: flex; justify-content: center; align-items: center; margin-top : 30px;">SLM Mart</h5>
+                        </div>
+                        <div class="text">
+                            <h4>MULTIMEDIA GRAPHIC DESIGNER (INTERNSHIP)
+
+                            </h4>
+                            <ul>
+                                <li>
+                                    Report to the Marketing Director and will assist with the
+development and design of, logos, collateral event
+materials and a variety of other creative tasks as assigned.
+                                </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+
+
+
+                <div class="box">
+                    <div class="year_company">
+                        <h5>June 2020 - Sep 2020</h5>
+                        <h5 style="display: flex; justify-content: center; align-items: center; margin-top : 30px;">If Logics</h5>
+                    </div>
+                <div class="text">
+                    <h4>calling Agent</h4>
+                    <ul>
+                        <li>
+                            Use questioning and listening skills that support effective telephone communication.
+                        </li>
+<!--                         <li>
+                            Understand the impact of attitude in handling calls professionally effectively deal with job stress,
+                            angry  callers,  and upset customers use the most appropiate way to communicate with different beahvior
+                            types on the telephone.
+                        </li>
+                        <li>
+                            Accomplished having good attendance and aslo the exact amount of hours in order to convert over to a
+                            permanent agent.
+                        </li> -->
+                        <li>
+                            Acted professionally and patiently when addressing negative customers feedback.
+                        </li>
+<!--                         <li>
+                            Identify customers trends that appear to have a negative impact on the replenishment process
+                        </li> -->
+                    </ul>
+                </div>
+                </div>
+
+                <div class="box">
+                    <div class="year_company">
+                        <h5>Oct 2012 - April 2020</h5>
+                        <h5 style="display: flex; justify-content: center; align-items: center; margin-top : 30px;">A-R Uniform</h5>
+                    </div>
+                <div class="text">
+                    <h4>Managing Director</h4>
+                    <ul>
+                        <li>
+                            Involved in generating leads and then ensuring that these are followed up.
+                        </li>
+                        <li>
+                            Maintaining and developing a positive corporate image and reputation.
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="about skills">
+                <h2 class="title2">Professional Skills</h2>
+                <div class="box">
+                    <h4>HTML</h4>
+                    <div class="percent">
+                    <div style="width: 90%;"></div>
+                </div>
+                </div>
+                <div class="box">
+                    <h4>CSS</h4>
+                    <div class="percent">
+                        <div style="width: 90%;"></div>
+                    </div>  
+                </div>
+                <div class="box">
+                    <h4>Javascript</h4>
+                    <div class="percent">
+                        <div style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Mongo DB</h4>
+                    <div class="percent">
+                        <div style="width: 60%;"></div>
+                    </div>
+                </div>
+                 <div class="box">
+                    <h4>Express Js</h4>
+                    <div class="percent">
+                        <div style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>React Js</h4>
+                    <div class="percent">
+                        <div style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>React Native</h4>
+                    <div class="percent">
+                        <div style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Redux</h4>
+                    <div class="percent">
+                        <div style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Node Js</h4>
+                    <div class="percent">
+                        <div style="width: 60%;"></div>
+                    </div>
+                </div>
+                  <div class="box">
+                    <h4>Next Js</h4>
+                    <div class="percent">
+                        <div style="width: 60%;"></div>
+                    </div>
+                </div>
+                 <div class="box">
+                    <h4>Material UI</h4>
+                    <div class="percent">
+                        <div style="width: 90%;"></div>
+                    </div>
+                </div>
+                 <div class="box">
+                    <h4>Bootstrap</h4>
+                    <div class="percent">
+                        <div style="width: 90%;"></div>
+                    </div>
+                </div>
+                 <div class="box">
+                    <h4>Tailwind Css</h4>
+                    <div class="percent">
+                        <div style="width: 50%;"></div>
+                    </div>
+                </div>
+                 <div class="box">
+                    <h4>Figma</h4>
+                    <div class="percent">
+                        <div style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Photoshop</h4>
+                    <div class="percent">
+                        <div style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Illustrator</h4>
+                    <div class="percent">
+                        <div style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>premiere</h4>
+                    <div class="percent">
+                        <div style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>After Effects</h4>
+                    <div class="percent">
+                        <div style="width: 50%;"></div>
+                    </div>
+                </div>
+
+               
+            </div>
+
+
+        </div>
+
+    </div>    
+</body>
+</html>
